@@ -1,7 +1,7 @@
 package com.orangehrmlive.TestComponents;
 
 
-import com.orangehrmlive.Pages.LoginPage;
+import com.orangehrmlive.Pages.LoginModule.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -42,8 +42,8 @@ public class Initialization {
         return loginPage;
 
     }
-   // @AfterMethod
-    //public void closeDriver() {
-      //  driver.close();
-   // }
+/*    @AfterMethod
+    public void closeDriver() {
+      driver.close();
+   }*/
 }

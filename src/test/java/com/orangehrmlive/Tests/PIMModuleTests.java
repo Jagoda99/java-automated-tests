@@ -1,13 +1,17 @@
 package com.orangehrmlive.Tests;
 
-import com.orangehrmlive.Pages.PIMModule.AddEmployee;
-import com.orangehrmlive.Pages.PIMModule.EmployeeList;
-import com.orangehrmlive.Pages.LoginPage;
+import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
+import com.orangehrmlive.Pages.PIMModule.AddEmployeePage;
+import com.orangehrmlive.Pages.PIMModule.EmployeeListPage;
+import com.orangehrmlive.Pages.LoginModule.LoginPage;
 import com.orangehrmlive.TestComponents.Initialization;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
+import java.util.regex.*;
 import java.io.IOException;
+
 
 public class PIMModuleTests extends Initialization {
 
@@ -15,29 +19,62 @@ public class PIMModuleTests extends Initialization {
     public void searchEmployeeTest(String email, String password) throws IOException {
 
         LoginPage loginPage = launchApp();
-        EmployeeList employeeList = loginPage.inputLoginInfo(email, password);
-        employeeList.inputEmployeeName("Alice Duval");
-        employeeList.inputEmployeeId("0221");
-        employeeList.selectEmploymentStatus("Full-Time Contract");
-        employeeList.inputSupervisorName("Kevin Mathews");
-        employeeList.selectJobTitle("Account Assistant");
-        employeeList.selectSubUnit("Finance");
-        employeeList.searchEmployee();
+        loginPage.inputLoginInfo(email, password);
+        DashboardPage dashboardPage = loginPage.goToDashboard();
+        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
+        employeeListPage.inputEmployeeName("Alice Duval");
+        employeeListPage.inputEmployeeId("0221");
+        employeeListPage.selectEmploymentStatus("Full-Time Contract");
+        employeeListPage.selectJobTitle("Account Assistant");
+        employeeListPage.selectSubUnit("Finance");
+        employeeListPage.searchEmployee();
+
+        String actualMessage = employeeListPage.getRecordFoundMessage();
+        Pattern pattern = Pattern.compile("[0-9]+");
+        Matcher matcher = pattern.matcher(actualMessage);
+        boolean result = matcher.find();
+        System.out.println(result);
+        Assert.assertTrue(result);
+    }
+    @Test(dataProvider = "getData")
+    public void negativeSearchEmployeeTest(String email, String password) throws IOException {
+
+        LoginPage loginPage = launchApp();
+        loginPage.inputLoginInfo(email, password);
+        DashboardPage dashboardPage = loginPage.goToDashboard();
+        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
+        employeeListPage.inputEmployeeName("Alice Duval");
+        employeeListPage.inputEmployeeId("0000");
+        employeeListPage.selectEmploymentStatus("Full-Time Contract");
+        employeeListPage.selectJobTitle("Account Assistant");
+        employeeListPage.selectSubUnit("Finance");
+        employeeListPage.searchEmployee();
+
+        String actualMessage = employeeListPage.getNoFoundMessage();
+        Assert.assertEquals(actualMessage,"No Records Found");
     }
     @Test(dataProvider = "getData")
     public void addEmployeeTest(String email, String password) throws IOException {
         LoginPage loginPage = launchApp();
-        EmployeeList employeeList = loginPage.inputLoginInfo(email, password);
-        AddEmployee addEmployeePage = employeeList.goToAddEmployeePage();
+        loginPage.inputLoginInfo(email, password);
+        DashboardPage dashboardPage = loginPage.goToDashboard();
+        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
+        AddEmployeePage addEmployeePage = employeeListPage.goToAddEmployeePage();
         addEmployeePage.setFirstName("Jane");
         addEmployeePage.setMiddleName("Marie");
         addEmployeePage.setLastName("Doe");
-        addEmployeePage.setId("2100");
+        addEmployeePage.setId("53455544");
         addEmployeePage.createLoginDetails();
-        addEmployeePage.setUsername("janedoe");
+        addEmployeePage.setUsername("janedoe45");
         addEmployeePage.setPassword("User123!");
         addEmployeePage.confirmPassword("User123!");
+        addEmployeePage.save();
+
+        addEmployeePage.waitUntilElementAppears();
+        String actualMessage = addEmployeePage.getSuccessfullySaved();
+        Assert.assertEquals(actualMessage,"Success");
     }
+
     @DataProvider
     public Object[][] getData() {
 

@@ -1,8 +1,9 @@
 package com.orangehrmlive.Tests;
 
-import com.orangehrmlive.Pages.Admin.UserManagement;
-import com.orangehrmlive.Pages.LoginPage;
-import com.orangehrmlive.Pages.PIMModule.EmployeeList;
+import com.orangehrmlive.Pages.AdminModule.UserManagementPage;
+import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
+import com.orangehrmlive.Pages.LoginModule.LoginPage;
+import com.orangehrmlive.Pages.PIMModule.EmployeeListPage;
 import com.orangehrmlive.TestComponents.Initialization;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -14,15 +15,18 @@ public class AdminModuleTests extends Initialization {
     public void addUserTest(String email, String password) throws IOException {
 
         LoginPage loginPage = launchApp();
-        EmployeeList employeeList = loginPage.inputLoginInfo(email, password);
-        UserManagement userManagementpage = employeeList.goToAdminModule();
-        userManagementpage.addUser();
-        userManagementpage.selectUserRole("ESS");
-        userManagementpage.setName("Jane Doe");
-        userManagementpage.selectStatus("Enabled");
-        userManagementpage.setUserName("janedoe");
-        userManagementpage.setPassword("User123!");
-        userManagementpage.confirmPassword("User123!");
+        loginPage.inputLoginInfo(email, password);
+        DashboardPage dashboardPage = loginPage.goToDashboard();
+        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
+        UserManagementPage userManagementPage = employeeListPage.goToAdminModule();
+        userManagementPage.addUser();
+        userManagementPage.selectUserRole("ESS");
+        userManagementPage.setName("Jane Marie Doe");
+        userManagementPage.selectStatus("Enabled");
+        userManagementPage.setUserName("janed");
+        userManagementPage.setPassword("User123!");
+        userManagementPage.confirmPassword("User123!");
+        userManagementPage.save();
     }
     @DataProvider
     public Object[][] getData() {

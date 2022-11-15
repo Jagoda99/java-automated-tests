@@ -1,6 +1,7 @@
 package com.orangehrmlive.Tests;
 
-import com.orangehrmlive.Pages.LoginPage;
+import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
+import com.orangehrmlive.Pages.LoginModule.LoginPage;
 import com.orangehrmlive.TestComponents.Initialization;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -15,9 +16,9 @@ public class LoginTest extends Initialization{
 
             LoginPage loginPage = launchApp();
             loginPage.inputLoginInfo(email, password);
-           // EmployeeList employeeList = loginPage.goToPIM();
+            DashboardPage dashboardPage = loginPage.goToDashboard();
 
-            String expectedUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList";
+            String expectedUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
             String actualUrl = driver.getCurrentUrl();
             Assert.assertEquals(actualUrl, expectedUrl, "Actual page url is not the same as expected");
 
