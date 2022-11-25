@@ -5,17 +5,19 @@ import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
 import com.orangehrmlive.Pages.LoginModule.LoginPage;
 import com.orangehrmlive.Pages.PIMModule.EmployeeListPage;
 import com.orangehrmlive.TestComponents.Initialization;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class AdminModuleTests extends Initialization {
-    @Test(dataProvider = "getData")
-    public void addUserTest(String email, String password) throws IOException {
+    @Test
+    public void addUserTest() throws IOException, InterruptedException {
 
         LoginPage loginPage = launchApp();
-        loginPage.inputLoginInfo(email, password);
+        loginPage.inputUsername("Admin");
+        loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
         EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
         UserManagementPage userManagementPage = employeeListPage.goToAdminModule();
@@ -23,14 +25,14 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.selectUserRole("ESS");
         userManagementPage.setName("Jane Marie Doe");
         userManagementPage.selectStatus("Enabled");
-        userManagementPage.setUserName("janed");
+        userManagementPage.setUserName("janedoe23");
         userManagementPage.setPassword("User123!");
         userManagementPage.confirmPassword("User123!");
-        userManagementPage.save();
-    }
-    @DataProvider
-    public Object[][] getData() {
+        Thread.sleep(2000);
+        userManagementPage.clickSaveButton();
 
-        return new Object[][] {{"Admin","admin123"}};
+        userManagementPage.waitUntilElementAppears();
+        String actualMessage = userManagementPage.getSuccessfullySaved();
+        Assert.assertEquals(actualMessage,"Success");
     }
 }

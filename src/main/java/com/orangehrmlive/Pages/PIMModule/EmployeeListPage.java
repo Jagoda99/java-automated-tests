@@ -1,13 +1,12 @@
 package com.orangehrmlive.Pages.PIMModule;
 
 import com.orangehrmlive.Components.AbstractComponents;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.Iterator;
+import java.time.Duration;
 import java.util.List;
 
 public class EmployeeListPage extends AbstractComponents {
@@ -63,6 +62,7 @@ public class EmployeeListPage extends AbstractComponents {
     public void selectEmploymentStatus(String input) {
         employmentStatusXpath.click();
         selectOption(dropdown, input);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
     }
     public void inputSupervisorName(String input) {
         supervisorNameXpath.sendKeys(input);

@@ -1,11 +1,17 @@
 package com.orangehrmlive.Pages.AdminModule;
 
 import com.orangehrmlive.Components.AbstractComponents;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.events.WebDriverListener;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class UserManagementPage extends AbstractComponents {
@@ -35,6 +41,11 @@ public class UserManagementPage extends AbstractComponents {
     WebElement confirmPasswordXpath;
     @FindBy(className = "oxd-select-option")
     List<WebElement> dropdown;
+    @FindBy(css = "#app > div.oxd-layout > div.oxd-layout-container > div.oxd-layout-context > div > div > form > div.oxd-form-actions > button.oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space")
+    WebElement saveButton;
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']")
+    WebElement successfullySaved;
+
 
 
     //input methods
@@ -47,6 +58,9 @@ public class UserManagementPage extends AbstractComponents {
     }
     public void setName(String name) {
         employeeNameXpath.sendKeys(name);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@role='option'])[2]")));
+        employeeNameXpath.sendKeys(Keys.DOWN, Keys.DOWN, Keys.RETURN);
     }
     public void selectStatus(String input) {
         statusXpath.click();
@@ -61,7 +75,18 @@ public class UserManagementPage extends AbstractComponents {
     public void confirmPassword(String password) {
         confirmPasswordXpath.sendKeys(password);
     }
+    public void clickSaveButton() {
+        saveButton.click();
+    }
 
+    //return messages
+    public void waitUntilElementAppears() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='oxd-toast oxd-toast--success oxd-toast-container--toast']")));
+    }
+    public String getSuccessfullySaved() {
+        return successfullySaved.getText();
 
-
+    }
 }
+

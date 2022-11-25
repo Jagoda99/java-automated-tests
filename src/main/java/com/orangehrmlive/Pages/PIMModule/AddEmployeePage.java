@@ -42,6 +42,8 @@ public class AddEmployeePage extends AbstractComponents {
     WebElement confirmPasswordInput;
     @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']")
     WebElement successfullySaved;
+    @FindBy(xpath = "//div[@class='oxd-toast oxd-toast--success oxd-toast-container--toast']")
+    WebElement toastMessage;
 
 
     //input methods

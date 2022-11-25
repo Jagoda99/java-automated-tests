@@ -15,11 +15,34 @@ import java.io.IOException;
 
 public class PIMModuleTests extends Initialization {
 
-    @Test(dataProvider = "getData")
-    public void searchEmployeeTest(String email, String password) throws IOException {
+    @Test
+    public void addEmployeeTest() throws IOException {
+        LoginPage loginPage = launchApp();
+        loginPage.inputUsername("Admin");
+        loginPage.inputPassword("admin123");;
+        DashboardPage dashboardPage = loginPage.goToDashboard();
+        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
+        AddEmployeePage addEmployeePage = employeeListPage.goToAddEmployeePage();
+        addEmployeePage.setFirstName("Jane");
+        addEmployeePage.setMiddleName("Marie");
+        addEmployeePage.setLastName("Doe");
+        addEmployeePage.setId("9001");
+        addEmployeePage.createLoginDetails();
+        addEmployeePage.setUsername("janedoe");
+        addEmployeePage.setPassword("User123!");
+        addEmployeePage.confirmPassword("User123!");
+        addEmployeePage.save();
+
+        addEmployeePage.waitUntilElementAppears();
+        String actualMessage = addEmployeePage.getSuccessfullySaved();
+        Assert.assertEquals(actualMessage,"Success");
+    }
+    @Test
+    public void searchEmployeeTest() throws IOException {
 
         LoginPage loginPage = launchApp();
-        loginPage.inputLoginInfo(email, password);
+        loginPage.inputUsername("Admin");
+        loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
         EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
         employeeListPage.inputEmployeeName("Alice Duval");
@@ -36,11 +59,12 @@ public class PIMModuleTests extends Initialization {
         System.out.println(result);
         Assert.assertTrue(result);
     }
-    @Test(dataProvider = "getData")
-    public void negativeSearchEmployeeTest(String email, String password) throws IOException {
+    @Test
+    public void negativeSearchEmployeeTest() throws IOException {
 
         LoginPage loginPage = launchApp();
-        loginPage.inputLoginInfo(email, password);
+        loginPage.inputUsername("Admin");
+        loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
         EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
         employeeListPage.inputEmployeeName("Alice Duval");
@@ -53,31 +77,5 @@ public class PIMModuleTests extends Initialization {
         String actualMessage = employeeListPage.getNoFoundMessage();
         Assert.assertEquals(actualMessage,"No Records Found");
     }
-    @Test(dataProvider = "getData")
-    public void addEmployeeTest(String email, String password) throws IOException {
-        LoginPage loginPage = launchApp();
-        loginPage.inputLoginInfo(email, password);
-        DashboardPage dashboardPage = loginPage.goToDashboard();
-        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
-        AddEmployeePage addEmployeePage = employeeListPage.goToAddEmployeePage();
-        addEmployeePage.setFirstName("Jane");
-        addEmployeePage.setMiddleName("Marie");
-        addEmployeePage.setLastName("Doe");
-        addEmployeePage.setId("53455544");
-        addEmployeePage.createLoginDetails();
-        addEmployeePage.setUsername("janedoe45");
-        addEmployeePage.setPassword("User123!");
-        addEmployeePage.confirmPassword("User123!");
-        addEmployeePage.save();
 
-        addEmployeePage.waitUntilElementAppears();
-        String actualMessage = addEmployeePage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
-    }
-
-    @DataProvider
-    public Object[][] getData() {
-
-        return new Object[][] {{"Admin","admin123"}};
-    }
 }

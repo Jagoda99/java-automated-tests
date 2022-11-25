@@ -42,8 +42,8 @@ public class Initialization {
         return loginPage;
 
     }
-/*    @AfterMethod
+    @AfterMethod
     public void closeDriver() {
-      driver.close();
-   }*/
+      driver.quit();
+   }
 }
