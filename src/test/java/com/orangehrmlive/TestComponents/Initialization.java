@@ -2,6 +2,7 @@ package com.orangehrmlive.TestComponents;
 
 
 import com.orangehrmlive.Pages.LoginModule.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,11 +23,12 @@ public class Initialization {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
 
