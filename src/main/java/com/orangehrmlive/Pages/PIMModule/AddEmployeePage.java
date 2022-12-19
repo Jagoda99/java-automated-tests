@@ -24,26 +24,25 @@ public class AddEmployeePage extends AbstractComponents {
 
 
     //web elements
-    @FindBy(xpath = "//input[@placeholder='First Name']")
+    @FindBy(css = "input[placeholder='First Name']")
     WebElement firstNameInput;
-    @FindBy(xpath = "//input[@placeholder='Middle Name']")
+    @FindBy(css = "input[placeholder='Middle Name']")
     WebElement middleNameInput;
-    @FindBy(xpath = "//input[@placeholder='Last Name']")
+    @FindBy(css = "input[placeholder='Last Name']")
     WebElement lastNameInput;
-    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
+    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
     WebElement idInput;
-    @FindBy(xpath = "//span[@class='oxd-switch-input oxd-switch-input--active --label-right']")
+    @FindBy(css = ".oxd-switch-input.oxd-switch-input--active.--label-right")
     WebElement detailsButton;
-    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[3]")
+    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
     WebElement usernameInput;
-    @FindBy(xpath = "//div[@class='oxd-grid-item oxd-grid-item--gutters user-password-cell']//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@type='password']")
+    @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement passwordInput;
-    @FindBy(xpath = "//div[@class='oxd-grid-item oxd-grid-item--gutters']//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@type='password']")
+    @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement confirmPasswordInput;
     @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']")
     WebElement successfullySaved;
-    @FindBy(xpath = "//div[@class='oxd-toast oxd-toast--success oxd-toast-container--toast']")
-    WebElement toastMessage;
+
 
 
     //input methods

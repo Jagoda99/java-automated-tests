@@ -21,15 +21,15 @@ public class LoginPage extends AbstractComponents {
     WebElement usernameEl;
     @FindBy(name = "password")
     WebElement passwordEl;
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(css = "button[type='submit']")
     WebElement submitButton;
-    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")
-    WebElement forgotPasswordXpath;
-    @FindBy(xpath = "//button[normalize-space()='Reset Password']")
+    @FindBy(css = ".oxd-text.oxd-text--p.orangehrm-login-forgot-header")
+    WebElement forgotPassword;
+    @FindBy(css = "button[type='submit']")
     WebElement resetButton;
-    @FindBy(xpath = "//div[@class='oxd-alert-content oxd-alert-content--error']")
+    @FindBy(css = ".oxd-alert-content.oxd-alert-content--error")
     WebElement errorMessage;
-    @FindBy(xpath = "//h6[normalize-space()='Reset Password link sent successfully']")
+    @FindBy(css = ".oxd-text.oxd-text--h6.orangehrm-forgot-password-title")
     WebElement resetPasswordMessage;
     @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > form:nth-child(2) > div:nth-child(2) > div:nth-child(1) > span:nth-child(3)")
     WebElement inputUsernameErrorMessage;
@@ -45,7 +45,7 @@ public class LoginPage extends AbstractComponents {
     }
 
     public void goToForgotPassword() {
-        forgotPasswordXpath.click();
+        forgotPassword.click();
     }
 
     public void clickResetButton() {
