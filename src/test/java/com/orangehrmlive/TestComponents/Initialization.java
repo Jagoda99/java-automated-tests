@@ -15,6 +15,8 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class Initialization {
+
+    protected LoginPage loginPage;
     public static WebDriver driver;
     public WebDriver initializeDriver() throws IOException {
         Properties prop = new Properties();
@@ -37,11 +39,10 @@ public class Initialization {
         return driver;
     }
     @BeforeMethod
-    public LoginPage launchApp() throws IOException {
+    public void launchApp() throws IOException {
         driver = initializeDriver();
-        LoginPage loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(driver);
         loginPage.goTo("https://opensource-demo.orangehrmlive.com/");
-        return loginPage;
 
     }
     @AfterMethod

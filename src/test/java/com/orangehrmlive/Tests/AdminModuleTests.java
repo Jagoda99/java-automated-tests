@@ -2,19 +2,15 @@ package com.orangehrmlive.Tests;
 
 import com.orangehrmlive.Pages.AdminModule.UserManagementPage;
 import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
-import com.orangehrmlive.Pages.LoginModule.LoginPage;
 import com.orangehrmlive.Pages.PIMModule.EmployeeListPage;
 import com.orangehrmlive.TestComponents.Initialization;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 public class AdminModuleTests extends Initialization {
     @Test
-    public void adminPageTest() throws IOException {
+    public void adminPageTest() {
 
-        LoginPage loginPage = launchApp();
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -24,8 +20,8 @@ public class AdminModuleTests extends Initialization {
 
     }
     @Test
-    public void searchUsernameTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void searchUsernameTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -36,8 +32,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertTrue(userManagementPage.verifySearchMessage());
     }
     @Test
-    public void searchUserRoleTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void searchUserRoleTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -48,8 +44,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertTrue(userManagementPage.verifySearchMessage());
     }
     @Test
-    public void searchEmployeeNameTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void searchEmployeeNameTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -59,8 +55,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertTrue(userManagementPage.verifySearchMessage());
     }
     @Test
-    public void searchStatusTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void searchStatusTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -70,8 +66,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertTrue(userManagementPage.verifySearchMessage());
     }
     @Test
-    public void editUserRoleTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void editUserRoleTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -87,8 +83,8 @@ public class AdminModuleTests extends Initialization {
 
     }
     @Test
-    public void editEmployeeNameTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void editEmployeeNameTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -102,8 +98,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertEquals(actualMessage,"Success");
     }
     @Test
-    public void editUsernameTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void editUsernameTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -117,8 +113,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertEquals(actualMessage,"Success");
     }
     @Test
-    public void editStatusTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void editStatusTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -132,8 +128,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertEquals(actualMessage,"Success");
     }
     @Test
-    public void changePasswordTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void changePasswordTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -149,8 +145,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertEquals(actualMessage,"Success");
     }
     @Test
-    public void cancelEditTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void cancelEditTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -161,8 +157,8 @@ public class AdminModuleTests extends Initialization {
         Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
     }
     @Test
-    public void UserRoleBlankSpaceTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void UserRoleBlankSpaceTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -171,9 +167,8 @@ public class AdminModuleTests extends Initialization {
 
     }
     @Test
-    public void addUserTest() throws IOException, InterruptedException {
+    public void addUserTest() throws InterruptedException {
 
-        LoginPage loginPage = launchApp();
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();

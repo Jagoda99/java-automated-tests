@@ -1,21 +1,18 @@
 package com.orangehrmlive.Tests;
 
 import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
-import com.orangehrmlive.Pages.LoginModule.LoginPage;
 import com.orangehrmlive.Pages.PIMModule.AddEmployeePage;
 import com.orangehrmlive.Pages.PIMModule.EmployeeListPage;
 import com.orangehrmlive.TestComponents.Initialization;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 
 public class PIMModuleTests extends Initialization {
 
     @Test
-    public void addEmployeeTest() throws IOException {
-        LoginPage loginPage = launchApp();
+    public void addEmployeeTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");;
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -36,9 +33,8 @@ public class PIMModuleTests extends Initialization {
         Assert.assertEquals(actualMessage,"Success");
     }
     @Test
-    public void searchEmployeeTest() throws IOException {
+    public void searchEmployeeTest() {
 
-        LoginPage loginPage = launchApp();
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -53,9 +49,8 @@ public class PIMModuleTests extends Initialization {
         Assert.assertTrue(employeeListPage.verifySearchMessage());
     }
     @Test
-    public void negativeSearchEmployeeTest() throws IOException {
+    public void negativeSearchEmployeeTest() {
 
-        LoginPage loginPage = launchApp();
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
@@ -71,8 +66,8 @@ public class PIMModuleTests extends Initialization {
     }
 
     @Test
-    public void resetSearchTest() throws IOException{
-        LoginPage loginPage = launchApp();
+    public void resetSearchTest() {
+
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
