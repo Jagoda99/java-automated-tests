@@ -35,31 +35,30 @@ public class UserManagementPage extends AbstractComponents {
     List<WebElement> dropdown;
     @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
     WebElement requiredMessage;
+    @FindBy(css = ".oxd-select-wrapper")
+    List <WebElement> wrapper;
 
 
 //system users web elements
+
     @FindBy(css = "div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     WebElement usernameSearch;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-    WebElement userRoleSearch;
+    WebElement userRoleSearch = wrapper.get(0);
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameSearch;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-    WebElement statusSearch;
+    WebElement statusSearch = wrapper.get(1);
     @FindBy(css = "button[type='submit']")
     WebElement searchButton;
 
 
 
 //edit user web elements
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > button:nth-child(2) > i:nth-child(1)")
+    @FindBy(css = ".oxd-icon.bi-pencil-fill")
     WebElement firstEditButton;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-    WebElement userRoleEdit;
+    WebElement userRoleEdit = wrapper.get(0);
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameEdit;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-    WebElement statusEdit;
+     WebElement statusEdit = wrapper.get(1);
     @FindBy(css = "input[autocomplete='off']")
     WebElement usernameEdit;
     @FindBy(css = ".oxd-icon.bi-check.oxd-checkbox-input-icon")
@@ -77,19 +76,17 @@ public class UserManagementPage extends AbstractComponents {
 //add employee web elements
     @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--secondary']")
     WebElement addButton;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-    WebElement userRoleAdd;
+    WebElement userRoleAdd = wrapper.get(0);
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameAdd;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-    WebElement statusAdd;
-    @FindBy(css = "div[class='oxd-form-row'] div[class='oxd-grid-2 orangehrm-full-width-grid'] div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
+    WebElement statusAdd = wrapper.get(1);
+    @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     WebElement usernameAdd;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement passwordAdd;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement confirmPasswordAdd;
-    @FindBy(css = "#app > div.oxd-layout > div.oxd-layout-container > div.oxd-layout-context > div > div > form > div.oxd-form-actions > button.oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space")
+    @FindBy(css = "button[type='submit']")
     WebElement saveButtonAdd;
     @FindBy (css = "header[class='oxd-topbar'] li:nth-child(2) span:nth-child(1)")
     WebElement jobButton;

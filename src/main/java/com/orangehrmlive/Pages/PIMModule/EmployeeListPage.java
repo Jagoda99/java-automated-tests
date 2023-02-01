@@ -48,10 +48,7 @@ public class EmployeeListPage extends AbstractComponents {
     WebElement recordFound;
     @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text']")
     WebElement noRecordFoundToaster;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(50) > div:nth-child(1) > div:nth-child(9) > div:nth-child(1) > button:nth-child(1) > i:nth-child(1)")
-    WebElement deleteButton;
-    @FindBy(className = "oxd-table-card")
-    List <WebElement> table;
+
 
 
 
@@ -69,7 +66,6 @@ public class EmployeeListPage extends AbstractComponents {
     public void selectEmploymentStatus(String input) {
         employmentStatus.click();
         selectOption(dropdown, input);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
     }
     public void inputSupervisorName(String input) {
         supervisorName.sendKeys(input);

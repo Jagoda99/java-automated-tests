@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class AddEmployeePage extends AbstractComponents {
     public static WebDriver driver;
@@ -30,17 +31,17 @@ public class AddEmployeePage extends AbstractComponents {
     WebElement middleNameInput;
     @FindBy(css = "input[placeholder='Last Name']")
     WebElement lastNameInput;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
-    WebElement idInput;
+    @FindBy(css = ".oxd-input.oxd-input--active")
+    List<WebElement> inputs;
+    WebElement idInput = inputs.get(0);
     @FindBy(css = ".oxd-switch-input.oxd-switch-input--active.--label-right")
     WebElement detailsButton;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > form:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)")
-    WebElement usernameInput;
+    WebElement usernameInput = inputs.get(1);
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement passwordInput;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement confirmPasswordInput;
-    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text']")
+    @FindBy(css = ".oxd-text.oxd-text--p.oxd-text--toast-title.oxd-toast-content-text")
     WebElement successfullySaved;
 
 
@@ -75,7 +76,7 @@ public class AddEmployeePage extends AbstractComponents {
     //return messages
     public void waitUntilElementAppears() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='oxd-toast oxd-toast--success oxd-toast-container--toast']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("oxd-toast.oxd-toast--success.oxd-toast-container--toast")));
     }
 
     public String getSuccessfullySaved() {

@@ -5,8 +5,11 @@ import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class LoginPage extends AbstractComponents {
     public WebDriver driver;
@@ -31,10 +34,9 @@ public class LoginPage extends AbstractComponents {
     WebElement errorMessage;
     @FindBy(css = ".oxd-text.oxd-text--h6.orangehrm-forgot-password-title")
     WebElement resetPasswordMessage;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > form:nth-child(2) > div:nth-child(2) > div:nth-child(1) > span:nth-child(3)")
-    WebElement inputUsernameErrorMessage;
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > form:nth-child(2) > div:nth-child(3) > div:nth-child(1) > span:nth-child(3)")
-    WebElement inputPasswordErrorMessage;
+    @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
+    List<WebElement> requiredMessage;
+
 
     public void inputUsername(String username) {
         usernameEl.sendKeys(username);
@@ -107,11 +109,11 @@ public class LoginPage extends AbstractComponents {
     }
 
     public String getInputUsernameErrorMessage() {
-        return inputUsernameErrorMessage.getText();
+        return requiredMessage.get(0).getText();
     }
 
     public String getInputPasswordErrorMessage() {
-        return inputPasswordErrorMessage.getText();
+        return requiredMessage.get(1).getText();
     }
 
     public boolean checkMaskedPassword() {
