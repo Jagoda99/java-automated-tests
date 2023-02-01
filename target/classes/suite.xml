@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Tests" verbose="2" annotations="JDK">
+    <test name="a-test" preserve-order="true" >
+        <classes>
+            <!--<class name="com.orangehrmlive.Tests.PositiveLoginTests" />-->
+            <!--<class name="com.orangehrmlive.Tests.PIMModuleTests" />-->
+            <class name="com.orangehrmlive.Tests.AdminModuleTests" />
+        </classes>
+    </test>
+
+</suite>

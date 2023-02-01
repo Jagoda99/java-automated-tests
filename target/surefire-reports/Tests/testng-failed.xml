@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Tests]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="a-test(failed)" verbose="0">
+    <classes>
+      <class name="com.orangehrmlive.Tests.AdminModuleTests">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="editShiftTest"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- com.orangehrmlive.Tests.AdminModuleTests -->
+    </classes>
+  </test> <!-- a-test(failed) -->
+</suite> <!-- Failed suite [Tests] -->

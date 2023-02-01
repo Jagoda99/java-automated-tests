@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-12-13T13:39:46 CET" name="Tests" finished-at="2022-12-13T13:39:58 CET" duration-ms="11833">
+    <groups>
+    </groups>
+    <test started-at="2022-12-13T13:39:46 CET" name="a-test" finished-at="2022-12-13T13:39:58 CET" duration-ms="11833">
+      <class name="com.orangehrmlive.Tests.AdminModuleTests">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@402bba4f]" started-at="2022-12-13T13:39:46 CET" name="launchApp" finished-at="2022-12-13T13:39:49 CET" duration-ms="3571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="editShiftTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@402bba4f]" started-at="2022-12-13T13:39:49 CET" name="editShiftTest" finished-at="2022-12-13T13:39:57 CET" duration-ms="7949" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editShiftTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@402bba4f]" started-at="2022-12-13T13:39:57 CET" name="closeDriver" finished-at="2022-12-13T13:39:58 CET" duration-ms="255" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.orangehrmlive.Tests.AdminModuleTests -->
+    </test> <!-- a-test -->
+  </suite> <!-- Tests -->
+</testng-results>
