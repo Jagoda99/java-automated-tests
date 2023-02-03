@@ -35,30 +35,32 @@ public class UserManagementPage extends AbstractComponents {
     List<WebElement> dropdown;
     @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
     WebElement requiredMessage;
-    @FindBy(css = ".oxd-select-wrapper")
-    List <WebElement> wrapper;
+
 
 
 //system users web elements
-
     @FindBy(css = "div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     WebElement usernameSearch;
-    WebElement userRoleSearch = wrapper.get(0);
+    @FindBy(css = ".oxd-grid-item:nth-child(2) .oxd-select-text")
+    WebElement userRoleSearch;
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameSearch;
-    WebElement statusSearch = wrapper.get(1);
+    @FindBy(css = ".oxd-grid-item:nth-child(4) .oxd-select-text")
+    WebElement statusSearch;
     @FindBy(css = "button[type='submit']")
     WebElement searchButton;
 
 
 
 //edit user web elements
-    @FindBy(css = ".oxd-icon.bi-pencil-fill")
+    @FindBy(css = "oxd-icon-button:nth-of-type(1) .oxd-icon.bi-pencil-fill")
     WebElement firstEditButton;
-    WebElement userRoleEdit = wrapper.get(0);
+    @FindBy(css = ".oxd-grid-item:nth-of-type(1) .oxd-select-text")
+    WebElement userRoleEdit;
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameEdit;
-     WebElement statusEdit = wrapper.get(1);
+    @FindBy(css = ".oxd-grid-item:nth-of-type(3) .oxd-select-text")
+     WebElement statusEdit;
     @FindBy(css = "input[autocomplete='off']")
     WebElement usernameEdit;
     @FindBy(css = ".oxd-icon.bi-check.oxd-checkbox-input-icon")
@@ -76,10 +78,12 @@ public class UserManagementPage extends AbstractComponents {
 //add employee web elements
     @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--secondary']")
     WebElement addButton;
-    WebElement userRoleAdd = wrapper.get(0);
+    @FindBy(css = ".oxd-grid-item:nth-of-type(1) .oxd-select-text")
+    WebElement userRoleAdd;
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameAdd;
-    WebElement statusAdd = wrapper.get(1);
+    @FindBy(css = ".oxd-grid-item:nth-of-type(3) .oxd-select-text")
+    WebElement statusAdd;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     WebElement usernameAdd;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")

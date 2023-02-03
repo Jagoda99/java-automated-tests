@@ -31,12 +31,12 @@ public class AddEmployeePage extends AbstractComponents {
     WebElement middleNameInput;
     @FindBy(css = "input[placeholder='Last Name']")
     WebElement lastNameInput;
-    @FindBy(css = ".oxd-input.oxd-input--active")
-    List<WebElement> inputs;
-    WebElement idInput = inputs.get(0);
+    @FindBy(css = ".oxd-form-row:nth-child(1) .oxd-grid-2 .oxd-input")
+    WebElement idInput;
     @FindBy(css = ".oxd-switch-input.oxd-switch-input--active.--label-right")
     WebElement detailsButton;
-    WebElement usernameInput = inputs.get(1);
+    @FindBy(css = ".oxd-form-row:nth-child(4) .oxd-input")
+    WebElement usernameInput;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement passwordInput;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
