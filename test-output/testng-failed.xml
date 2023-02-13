@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Tests]" guice-stage="DEVELOPMENT" verbose="2">
+  <test thread-count="5" name="testng XML/HTML report(failed)" verbose="2">
+    <classes>
+      <class name="com.orangehrmlive.Tests.PIMModuleTests">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="searchEmployeeTest"/>
+          <include name="addEmployeeTest"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- com.orangehrmlive.Tests.PIMModuleTests -->
+      <class name="com.orangehrmlive.Tests.NegativeLoginTests">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="blankUsernameLoginTest"/>
+          <include name="blankPasswordLoginTest"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- com.orangehrmlive.Tests.NegativeLoginTests -->
+      <class name="com.orangehrmlive.Tests.AdminModuleTests">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="searchUsernameTest"/>
+          <include name="addUserTest"/>
+          <include name="editEmployeeNameTest"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- com.orangehrmlive.Tests.AdminModuleTests -->
+    </classes>
+  </test> <!-- testng XML/HTML report(failed) -->
+</suite> <!-- Failed suite [Tests] -->

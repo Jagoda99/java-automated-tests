@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="28" passed="21" failed="7" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-02-13T10:19:52 CET" name="Tests" finished-at="2023-02-13T10:25:15 CET" duration-ms="322750">
+    <groups>
+    </groups>
+    <test started-at="2023-02-13T10:19:52 CET" name="testng XML/HTML report" finished-at="2023-02-13T10:25:15 CET" duration-ms="322750">
+      <class name="com.orangehrmlive.Tests.PIMModuleTests">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:21:39 CET" name="launchApp" finished-at="2023-02-13T10:21:45 CET" duration-ms="6051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="addEmployeeTest()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:21:45 CET" name="addEmployeeTest" finished-at="2023-02-13T10:21:53 CET" duration-ms="8170" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [SuccessSuccessfully Saved ×] but found [Success]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [SuccessSuccessfully Saved ×] but found [Success]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at com.orangehrmlive.Tests.PIMModuleTests.addEmployeeTest(PIMModuleTests.java:33)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addEmployeeTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:21:53 CET" name="closeDriver" finished-at="2023-02-13T10:21:54 CET" duration-ms="556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:21:54 CET" name="launchApp" finished-at="2023-02-13T10:22:02 CET" duration-ms="8216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="negativeSearchEmployeeTest()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:02 CET" name="negativeSearchEmployeeTest" finished-at="2023-02-13T10:22:09 CET" duration-ms="7007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeSearchEmployeeTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:09 CET" name="closeDriver" finished-at="2023-02-13T10:22:10 CET" duration-ms="567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:10 CET" name="launchApp" finished-at="2023-02-13T10:22:18 CET" duration-ms="8290" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="resetSearchTest()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:18 CET" name="resetSearchTest" finished-at="2023-02-13T10:22:25 CET" duration-ms="6507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetSearchTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:25 CET" name="closeDriver" finished-at="2023-02-13T10:22:26 CET" duration-ms="1261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:26 CET" name="launchApp" finished-at="2023-02-13T10:22:31 CET" duration-ms="4748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="searchEmployeeTest()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:31 CET" name="searchEmployeeTest" finished-at="2023-02-13T10:22:36 CET" duration-ms="5041" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: element is not attached to the page document
+  (Session info: chrome=109.0.5414.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53a05b6f41b24f5738b15049bb056f0a, getElementText {id=6dbc164e-9eed-4d25-ba5c-38d85e03c4d5}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.121, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\jagod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61615/devtoo..., se:cdpVersion: 109.0.5414.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (53a05b6f41b24f5738b15049bb056f0a)] -> class name: oxd-select-option]
+Session ID: 53a05b6f41b24f5738b15049bb056f0a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=109.0.5414.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53a05b6f41b24f5738b15049bb056f0a, getElementText {id=6dbc164e-9eed-4d25-ba5c-38d85e03c4d5}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.121, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\jagod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61615}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61615/devtoo..., se:cdpVersion: 109.0.5414.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (53a05b6f41b24f5738b15049bb056f0a)] -> class name: oxd-select-option]
+Session ID: 53a05b6f41b24f5738b15049bb056f0a
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+at com.orangehrmlive.Components.AbstractComponents.selectOption(AbstractComponents.java:32)
+at com.orangehrmlive.Pages.PIMModule.EmployeeListPage.selectEmploymentStatus(EmployeeListPage.java:67)
+at com.orangehrmlive.Tests.PIMModuleTests.searchEmployeeTest(PIMModuleTests.java:44)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchEmployeeTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PIMModuleTests@5e316c74]" started-at="2023-02-13T10:22:36 CET" name="closeDriver" finished-at="2023-02-13T10:22:36 CET" duration-ms="666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.orangehrmlive.Tests.PIMModuleTests -->
+      <class name="com.orangehrmlive.Tests.AdminModuleTests">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:22:36 CET" name="launchApp" finished-at="2023-02-13T10:22:41 CET" duration-ms="4298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="addUserTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:22:41 CET" name="addUserTest" finished-at="2023-02-13T10:22:51 CET" duration-ms="10371" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.orangehrmlive.Tests.AdminModuleTests.addUserTest(AdminModuleTests.java:186)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUserTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:22:51 CET" name="closeDriver" finished-at="2023-02-13T10:22:52 CET" duration-ms="1113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:22:52 CET" name="launchApp" finished-at="2023-02-13T10:22:57 CET" duration-ms="5239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="adminPageTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:22:57 CET" name="adminPageTest" finished-at="2023-02-13T10:23:01 CET" duration-ms="3834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminPageTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:01 CET" name="closeDriver" finished-at="2023-02-13T10:23:02 CET" duration-ms="568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:02 CET" name="launchApp" finished-at="2023-02-13T10:23:06 CET" duration-ms="4385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="cancelEditTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:06 CET" name="cancelEditTest" finished-at="2023-02-13T10:23:13 CET" duration-ms="6563" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelEditTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:13 CET" name="closeDriver" finished-at="2023-02-13T10:23:13 CET" duration-ms="618" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:13 CET" name="launchApp" finished-at="2023-02-13T10:23:19 CET" duration-ms="5464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="changePasswordTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:19 CET" name="changePasswordTest" finished-at="2023-02-13T10:23:25 CET" duration-ms="6375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changePasswordTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:25 CET" name="closeDriver" finished-at="2023-02-13T10:23:26 CET" duration-ms="589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:26 CET" name="launchApp" finished-at="2023-02-13T10:23:37 CET" duration-ms="11243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="editEmployeeNameTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:37 CET" name="editEmployeeNameTest" finished-at="2023-02-13T10:23:43 CET" duration-ms="6448" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.orangehrmlive.Tests.AdminModuleTests.editEmployeeNameTest(AdminModuleTests.java:93)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editEmployeeNameTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:43 CET" name="closeDriver" finished-at="2023-02-13T10:23:44 CET" duration-ms="445" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:44 CET" name="launchApp" finished-at="2023-02-13T10:23:47 CET" duration-ms="3591" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="editStatusTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:47 CET" name="editStatusTest" finished-at="2023-02-13T10:23:54 CET" duration-ms="6483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editStatusTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:54 CET" name="closeDriver" finished-at="2023-02-13T10:23:54 CET" duration-ms="454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:54 CET" name="launchApp" finished-at="2023-02-13T10:23:58 CET" duration-ms="3379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="editUserRoleTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:23:58 CET" name="editUserRoleTest" finished-at="2023-02-13T10:24:04 CET" duration-ms="6499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editUserRoleTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:04 CET" name="closeDriver" finished-at="2023-02-13T10:24:05 CET" duration-ms="440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:05 CET" name="launchApp" finished-at="2023-02-13T10:24:08 CET" duration-ms="3449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="editUsernameTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:08 CET" name="editUsernameTest" finished-at="2023-02-13T10:24:16 CET" duration-ms="8061" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editUsernameTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:16 CET" name="closeDriver" finished-at="2023-02-13T10:24:17 CET" duration-ms="477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:17 CET" name="launchApp" finished-at="2023-02-13T10:24:20 CET" duration-ms="3737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="searchEmployeeNameTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:20 CET" name="searchEmployeeNameTest" finished-at="2023-02-13T10:24:25 CET" duration-ms="4422" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchEmployeeNameTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:25 CET" name="closeDriver" finished-at="2023-02-13T10:24:25 CET" duration-ms="490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:25 CET" name="launchApp" finished-at="2023-02-13T10:24:33 CET" duration-ms="7480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="searchStatusTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:33 CET" name="searchStatusTest" finished-at="2023-02-13T10:24:39 CET" duration-ms="6062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchStatusTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:39 CET" name="closeDriver" finished-at="2023-02-13T10:24:39 CET" duration-ms="559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:39 CET" name="launchApp" finished-at="2023-02-13T10:24:47 CET" duration-ms="7852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="searchUserRoleTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:47 CET" name="searchUserRoleTest" finished-at="2023-02-13T10:24:53 CET" duration-ms="5556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchUserRoleTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:53 CET" name="closeDriver" finished-at="2023-02-13T10:24:54 CET" duration-ms="769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:54 CET" name="launchApp" finished-at="2023-02-13T10:24:57 CET" duration-ms="3264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="searchUsernameTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:24:57 CET" name="searchUsernameTest" finished-at="2023-02-13T10:25:03 CET" duration-ms="5641" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.orangehrmlive.Tests.AdminModuleTests.searchUsernameTest(AdminModuleTests.java:32)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchUsernameTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:25:03 CET" name="closeDriver" finished-at="2023-02-13T10:25:03 CET" duration-ms="750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:25:03 CET" name="launchApp" finished-at="2023-02-13T10:25:07 CET" duration-ms="3432" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="userRoleBlankSpaceTest()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:25:07 CET" name="userRoleBlankSpaceTest" finished-at="2023-02-13T10:25:15 CET" duration-ms="7842" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userRoleBlankSpaceTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.AdminModuleTests@6d2a209c]" started-at="2023-02-13T10:25:15 CET" name="closeDriver" finished-at="2023-02-13T10:25:15 CET" duration-ms="563" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.orangehrmlive.Tests.AdminModuleTests -->
+      <class name="com.orangehrmlive.Tests.NegativeLoginTests">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:20:40 CET" name="launchApp" finished-at="2023-02-13T10:20:58 CET" duration-ms="18002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="blankFieldsLoginTest()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:20:58 CET" name="blankFieldsLoginTest" finished-at="2023-02-13T10:20:59 CET" duration-ms="782" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankFieldsLoginTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:20:59 CET" name="closeDriver" finished-at="2023-02-13T10:20:59 CET" duration-ms="365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:20:59 CET" name="launchApp" finished-at="2023-02-13T10:21:05 CET" duration-ms="5392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="blankPasswordLoginTest()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:05 CET" name="blankPasswordLoginTest" finished-at="2023-02-13T10:21:06 CET" duration-ms="715" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 1 out of bounds for length 1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+at java.base/java.util.Objects.checkIndex(Objects.java:385)
+at java.base/java.util.ArrayList.get(ArrayList.java:427)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:40)
+at jdk.proxy2/jdk.proxy2.$Proxy16.get(Unknown Source)
+at com.orangehrmlive.Pages.LoginModule.LoginPage.getInputPasswordErrorMessage(LoginPage.java:116)
+at com.orangehrmlive.Pages.LoginModule.LoginPage.verifyPasswordInputMessage(LoginPage.java:91)
+at com.orangehrmlive.Tests.NegativeLoginTests.blankPasswordLoginTest(NegativeLoginTests.java:44)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankPasswordLoginTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:06 CET" name="closeDriver" finished-at="2023-02-13T10:21:06 CET" duration-ms="608" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:06 CET" name="launchApp" finished-at="2023-02-13T10:21:19 CET" duration-ms="12900" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="blankUsernameLoginTest()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:19 CET" name="blankUsernameLoginTest" finished-at="2023-02-13T10:21:20 CET" duration-ms="1051" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at com.orangehrmlive.Tests.NegativeLoginTests.blankUsernameLoginTest(NegativeLoginTests.java:34)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankUsernameLoginTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:20 CET" name="closeDriver" finished-at="2023-02-13T10:21:21 CET" duration-ms="438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:21 CET" name="launchApp" finished-at="2023-02-13T10:21:25 CET" duration-ms="4858" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="invalidPasswordLoginTest()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:25 CET" name="invalidPasswordLoginTest" finished-at="2023-02-13T10:21:28 CET" duration-ms="2777" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidPasswordLoginTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:28 CET" name="closeDriver" finished-at="2023-02-13T10:21:29 CET" duration-ms="569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:29 CET" name="launchApp" finished-at="2023-02-13T10:21:36 CET" duration-ms="7568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="invalidUsernameLoginTest()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:36 CET" name="invalidUsernameLoginTest" finished-at="2023-02-13T10:21:39 CET" duration-ms="2344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidUsernameLoginTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.NegativeLoginTests@6ac13091]" started-at="2023-02-13T10:21:39 CET" name="closeDriver" finished-at="2023-02-13T10:21:39 CET" duration-ms="559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.orangehrmlive.Tests.NegativeLoginTests -->
+      <class name="com.orangehrmlive.Tests.PositiveLoginTests">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:19:52 CET" name="launchApp" finished-at="2023-02-13T10:20:00 CET" duration-ms="8006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="forgotPasswordTest()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:00 CET" name="forgotPasswordTest" finished-at="2023-02-13T10:20:04 CET" duration-ms="3119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotPasswordTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:04 CET" name="closeDriver" finished-at="2023-02-13T10:20:04 CET" duration-ms="707" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:04 CET" name="launchApp" finished-at="2023-02-13T10:20:13 CET" duration-ms="9081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="loginPageTest()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:13 CET" name="loginPageTest" finished-at="2023-02-13T10:20:13 CET" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:13 CET" name="closeDriver" finished-at="2023-02-13T10:20:14 CET" duration-ms="450" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:14 CET" name="launchApp" finished-at="2023-02-13T10:20:18 CET" duration-ms="4351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="loginTest()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:18 CET" name="loginTest" finished-at="2023-02-13T10:20:20 CET" duration-ms="1918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:20 CET" name="closeDriver" finished-at="2023-02-13T10:20:21 CET" duration-ms="499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:21 CET" name="launchApp" finished-at="2023-02-13T10:20:26 CET" duration-ms="5264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="maskedPasswordTest()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:26 CET" name="maskedPasswordTest" finished-at="2023-02-13T10:20:27 CET" duration-ms="862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- maskedPasswordTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:27 CET" name="closeDriver" finished-at="2023-02-13T10:20:27 CET" duration-ms="435" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:27 CET" name="launchApp" finished-at="2023-02-13T10:20:31 CET" duration-ms="4290" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="switchCursorTest()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:31 CET" name="switchCursorTest" finished-at="2023-02-13T10:20:32 CET" duration-ms="601" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchCursorTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:32 CET" name="closeDriver" finished-at="2023-02-13T10:20:33 CET" duration-ms="522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:33 CET" name="launchApp" finished-at="2023-02-13T10:20:38 CET" duration-ms="5001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="usernameCursorTest()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:38 CET" name="usernameCursorTest" finished-at="2023-02-13T10:20:40 CET" duration-ms="2085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- usernameCursorTest -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.orangehrmlive.Tests.PositiveLoginTests@2928854b]" started-at="2023-02-13T10:20:40 CET" name="closeDriver" finished-at="2023-02-13T10:20:40 CET" duration-ms="578" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.orangehrmlive.Tests.PositiveLoginTests -->
+    </test> <!-- testng XML/HTML report -->
+  </suite> <!-- Tests -->
+</testng-results>
