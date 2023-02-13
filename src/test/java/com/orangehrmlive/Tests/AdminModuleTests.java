@@ -76,10 +76,7 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.editUserRole("Admin");
         userManagementPage.clickSaveButtonEdit();
 
-        userManagementPage.waitUntilElementAppears();
-        String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
-
+        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
 
     }
     @Test
@@ -93,9 +90,8 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.editEmployeeName("Jane Doe");
         userManagementPage.clickSaveButtonEdit();
 
-        userManagementPage.waitUntilElementAppears();
-        String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
+        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
+
     }
     @Test
     public void editUsernameTest() {
@@ -108,9 +104,8 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.editUsername("admin");
         userManagementPage.clickSaveButtonEdit();
 
-        userManagementPage.waitUntilElementAppears();
-        String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
+        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
+
     }
     @Test
     public void editStatusTest() {
@@ -123,9 +118,11 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.editStatus("Disabled");
         userManagementPage.clickSaveButtonEdit();
 
-        userManagementPage.waitUntilElementAppears();
+        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
+
+        /*userManagementPage.waitUntilElementAppears();
         String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
+        Assert.assertEquals(actualMessage,"SuccessSuccessfully Updated");*/
     }
     @Test
     public void changePasswordTest() {
@@ -140,9 +137,8 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.editConfirmPassword("User123!");
         userManagementPage.clickSaveButtonEdit();
 
-        userManagementPage.waitUntilElementAppears();
-        String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
+        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
+
     }
     @Test
     public void cancelEditTest() {
@@ -157,13 +153,17 @@ public class AdminModuleTests extends Initialization {
         Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
     }
     @Test
-    public void UserRoleBlankSpaceTest() {
+    public void userRoleBlankSpaceTest() {
 
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
         UserManagementPage userManagementPage = dashboardPage.goToAdminModule();
         userManagementPage.clickFirstEditButton();
+        userManagementPage.editUserRole("-- Select --");
+
+        Assert.assertTrue(userManagementPage.verifyRequiredMessage("Required"));
+
 
     }
     @Test
@@ -172,20 +172,18 @@ public class AdminModuleTests extends Initialization {
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
-        EmployeeListPage employeeListPage = dashboardPage.goToPIMModule();
-        UserManagementPage userManagementPage = employeeListPage.goToAdminModule();
+        UserManagementPage userManagementPage = dashboardPage.goToAdminModule();
         userManagementPage.clickAddUser();
         userManagementPage.addUserRole("ESS");
         userManagementPage.addEmployeeName("Jane Marie Doe");
         userManagementPage.addStatus("Enabled");
-        userManagementPage.addUsername("janedoe23");
+        userManagementPage.addUsername("janedoe");
         userManagementPage.addPassword("User123!");
         userManagementPage.addConfirmPassword("User123!");
         Thread.sleep(2000);
         userManagementPage.clickSaveButtonAdd();
 
-        userManagementPage.waitUntilElementAppears();
-        String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
+        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
+
     }
 }

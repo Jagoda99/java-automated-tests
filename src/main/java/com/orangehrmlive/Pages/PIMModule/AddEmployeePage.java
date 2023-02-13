@@ -76,7 +76,7 @@ public class AddEmployeePage extends AbstractComponents {
     //return messages
     public void waitUntilElementAppears() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("oxd-toast.oxd-toast--success.oxd-toast-container--toast")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".oxd-toast.oxd-toast--success.oxd-toast-container--toast")));
     }
 
     public String getSuccessfullySaved() {

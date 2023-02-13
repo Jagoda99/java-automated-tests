@@ -21,16 +21,16 @@ public class PIMModuleTests extends Initialization {
         addEmployeePage.setFirstName("Jane");
         addEmployeePage.setMiddleName("Marie");
         addEmployeePage.setLastName("Doe");
-        addEmployeePage.setId("9001");
+        addEmployeePage.setId("9000");
         addEmployeePage.createLoginDetails();
-        addEmployeePage.setUsername("janedoe");
+        addEmployeePage.setUsername("janedoe1");
         addEmployeePage.setPassword("User123!");
         addEmployeePage.confirmPassword("User123!");
         addEmployeePage.save();
 
         addEmployeePage.waitUntilElementAppears();
         String actualMessage = addEmployeePage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"Success");
+        Assert.assertEquals(actualMessage,"SuccessSuccessfully Saved ×");
     }
     @Test
     public void searchEmployeeTest() {

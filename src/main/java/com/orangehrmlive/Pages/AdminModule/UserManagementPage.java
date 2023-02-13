@@ -53,7 +53,7 @@ public class UserManagementPage extends AbstractComponents {
 
 
 //edit user web elements
-    @FindBy(css = "oxd-icon-button:nth-of-type(1) .oxd-icon.bi-pencil-fill")
+    @FindBy(css = ".oxd-table-cell:nth-child(6) .oxd-icon-button:nth-child(2) .oxd-icon.bi-pencil-fill")
     WebElement firstEditButton;
     @FindBy(css = ".oxd-grid-item:nth-of-type(1) .oxd-select-text")
     WebElement userRoleEdit;
@@ -69,7 +69,7 @@ public class UserManagementPage extends AbstractComponents {
     WebElement passwordEdit;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
     WebElement confirmPasswordEdit;
-    @FindBy(css = "button[type='submit']")
+    @FindBy(css = ".oxd-button:nth-child(2)")
     WebElement saveButtonEdit;
     @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--ghost']")
     WebElement cancelButton;
@@ -82,6 +82,8 @@ public class UserManagementPage extends AbstractComponents {
     WebElement userRoleAdd;
     @FindBy(css = "input[placeholder='Type for hints...']")
     WebElement employeeNameAdd;
+    @FindBy(css = "div[role='listbox'] .oxd-autocomplete-option:nth-child(1)")
+    WebElement employeeNameDropdownAdd;
     @FindBy(css = ".oxd-grid-item:nth-of-type(3) .oxd-select-text")
     WebElement statusAdd;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
@@ -169,11 +171,10 @@ public class UserManagementPage extends AbstractComponents {
         userRoleAdd.click();
         selectOption(dropdown, input);
     }
-    public void addEmployeeName(String name) {
+    public void addEmployeeName(String name) throws InterruptedException {
         employeeNameAdd.sendKeys(name);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@role='option'])[2]")));
-        employeeNameAdd.sendKeys(Keys.DOWN, Keys.DOWN, Keys.RETURN);
+        Thread.sleep(2000);
+        employeeNameDropdownAdd.click();
     }
     public void addStatus(String input) {
         statusAdd.click();
@@ -206,6 +207,10 @@ public class UserManagementPage extends AbstractComponents {
         boolean result = matcher.find();
         return result;
     }
+    public boolean verifyRequiredMessage(String expectedMessage) {
+        String actualMessage = getRequiredMessage();
+        return actualMessage.equals(expectedMessage);
+    }
 
 //return messages
     public void waitUntilElementAppears() {
@@ -218,6 +223,7 @@ public class UserManagementPage extends AbstractComponents {
     public String getRecordFoundMessage() {
         return recordFound.getText();
     }
+    public String getRequiredMessage() { return requiredMessage.getText(); }
 
 
 //go to methods
