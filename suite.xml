@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Tests" verbose="2" annotations="JDK">
+<suite parallel="tests" verbose="2" annotations="JDK" name="Tests">
+    <listeners>
+        <listener class-name="com.orangehrmlive.TestComponents.Listeners"/>
+    </listeners>
     <test name="testng XML/HTML report" preserve-order="true" >
         <classes>
             <class name="com.orangehrmlive.Tests.PositiveLoginTests" />
