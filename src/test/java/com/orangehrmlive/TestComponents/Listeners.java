@@ -3,7 +3,7 @@ package com.orangehrmlive.TestComponents;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.orangehrmlive.Components.ExtentReporterNG;
+import com.orangehrmlive.ExtentReports.ExtentReporterNG;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -20,6 +20,7 @@ public class Listeners extends BaseTest implements ITestListener {
     public void onTestStart(ITestResult result) {
         test = extent.createTest(result.getMethod().getMethodName());
         extentTest.set(test);
+        extentTest.get().log(Status.INFO, "Starting " + result.getMethod().getMethodName());
     }
     @Override
     public void onTestSuccess(ITestResult result) {
@@ -29,7 +30,7 @@ public class Listeners extends BaseTest implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
        extentTest.get().fail(result.getThrowable());
-
+       extentTest.get().fail("Test failed");
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
         } catch (IllegalAccessException | NoSuchFieldException e) {
@@ -42,6 +43,11 @@ public class Listeners extends BaseTest implements ITestListener {
             throw new RuntimeException(e);
         }
         extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        extentTest.get().skip("Test skipped");
     }
 
     @Override

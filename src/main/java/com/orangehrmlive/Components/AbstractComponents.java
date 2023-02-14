@@ -22,7 +22,6 @@ public class AbstractComponents {
     //abstract methods
     public void goTo(String url) {
         driver.get(url);
-        System.out.println("Page is opened.");
     }
 
     public void selectOption(@NotNull List<WebElement> dropdown, String select) {
