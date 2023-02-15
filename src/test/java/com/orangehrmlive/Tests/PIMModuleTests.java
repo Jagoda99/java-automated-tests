@@ -4,10 +4,14 @@ import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
 import com.orangehrmlive.Pages.PIMModule.AddEmployeePage;
 import com.orangehrmlive.Pages.PIMModule.EmployeeListPage;
 import com.orangehrmlive.TestComponents.Initialization;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-
+@Listeners({com.orangehrmlive.Listeners.Listeners.class})
+@Epic("PIM Module")
+@Feature("PIM Tests")
 public class PIMModuleTests extends Initialization {
 
     @Test

@@ -38,6 +38,9 @@ public class Initialization {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
         return driver;
     }
+    public static WebDriver getDriver() {
+        return driver;
+    }
     @BeforeMethod
     public void launchApp() throws IOException {
         driver = initializeDriver();
