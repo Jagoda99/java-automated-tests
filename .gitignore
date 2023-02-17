@@ -26,3 +26,5 @@ hs_err_pid*
 .idea/
 test-output/
 target/
+allure-reports/
+extent-reports/
