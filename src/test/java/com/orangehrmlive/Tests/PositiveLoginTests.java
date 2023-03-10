@@ -1,16 +1,17 @@
 package com.orangehrmlive.Tests;
 
+import com.orangehrmlive.Listeners.Listener;
 import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
-import com.orangehrmlive.TestComponents.Initialization;
+import com.orangehrmlive.TestComponents.BaseTest;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-@Listeners({com.orangehrmlive.Listeners.Listeners.class})
+@Listeners({Listener.class})
 @Epic("Login Module")
 @Feature("Positive Login Tests")
-public class PositiveLoginTests extends Initialization {
+public class PositiveLoginTests extends BaseTest {
 
     @Test
     public void loginPageTest() {

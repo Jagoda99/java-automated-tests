@@ -1,236 +1,180 @@
 package com.orangehrmlive.Pages.AdminModule;
 
-import com.orangehrmlive.Components.AbstractComponents;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import com.orangehrmlive.Components.PageMenuComponent;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserManagementPage extends AbstractComponents {
-    public WebDriver driver;
+public class UserManagementPage extends PageMenuComponent {
 
     public UserManagementPage(WebDriver driver) {
-
         super(driver);
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
 
-//shared elements
-    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span']")
-    WebElement recordFound;
-    @FindBy(css = ".oxd-toast.oxd-toast--success.oxd-toast-container--toast")
-    WebElement successfullySaved;
-    @FindBy(className = "oxd-select-option")
-    List<WebElement> dropdown;
-    @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
-    WebElement requiredMessage;
-
-
-
-//system users web elements
+    //system users web elements
     @FindBy(css = "div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
-    WebElement usernameSearch;
+    private WebElement usernameSearch;
     @FindBy(css = ".oxd-grid-item:nth-child(2) .oxd-select-text")
-    WebElement userRoleSearch;
+    private WebElement userRoleSearch;
     @FindBy(css = "input[placeholder='Type for hints...']")
-    WebElement employeeNameSearch;
+    private WebElement employeeNameSearch;
     @FindBy(css = ".oxd-grid-item:nth-child(4) .oxd-select-text")
-    WebElement statusSearch;
+    private WebElement statusSearch;
     @FindBy(css = "button[type='submit']")
-    WebElement searchButton;
+    private WebElement searchButton;
 
 
-
-//edit user web elements
+    //edit user web elements
     @FindBy(css = ".oxd-table-cell:nth-child(6) .oxd-icon-button:nth-child(2) .oxd-icon.bi-pencil-fill")
-    WebElement firstEditButton;
+    private WebElement firstEditButton;
     @FindBy(css = ".oxd-grid-item:nth-of-type(1) .oxd-select-text")
-    WebElement userRoleEdit;
+    private WebElement userRoleEdit;
     @FindBy(css = "input[placeholder='Type for hints...']")
-    WebElement employeeNameEdit;
-    @FindBy(css = ".oxd-grid-item:nth-of-type(3) .oxd-select-text")
-     WebElement statusEdit;
-    @FindBy(css = "input[autocomplete='off']")
-    WebElement usernameEdit;
-    @FindBy(css = ".oxd-icon.bi-check.oxd-checkbox-input-icon")
-    WebElement changePasswordCheckbox;
-    @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
-    WebElement passwordEdit;
-    @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
-    WebElement confirmPasswordEdit;
-    @FindBy(css = ".oxd-button:nth-child(2)")
-    WebElement saveButtonEdit;
-    @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--ghost']")
-    WebElement cancelButton;
-
-
-//add employee web elements
-    @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--secondary']")
-    WebElement addButton;
-    @FindBy(css = ".oxd-grid-item:nth-of-type(1) .oxd-select-text")
-    WebElement userRoleAdd;
-    @FindBy(css = "input[placeholder='Type for hints...']")
-    WebElement employeeNameAdd;
+    private WebElement employeeNameEdit;
     @FindBy(css = "div[role='listbox'] .oxd-autocomplete-option:nth-child(1)")
-    WebElement employeeNameDropdownAdd;
+    private WebElement employeeNameDropdown;
     @FindBy(css = ".oxd-grid-item:nth-of-type(3) .oxd-select-text")
-    WebElement statusAdd;
-    @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
-    WebElement usernameAdd;
+    private WebElement statusEdit;
+    @FindBy(css = "input[autocomplete='off']")
+    private WebElement usernameEdit;
+    @FindBy(css = ".oxd-icon.bi-check.oxd-checkbox-input-icon")
+    private WebElement changePasswordCheckbox;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters user-password-cell'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
-    WebElement passwordAdd;
+    private WebElement passwordEdit;
     @FindBy(css = "div[class='oxd-grid-item oxd-grid-item--gutters'] div[class='oxd-input-group oxd-input-field-bottom-space'] div input[type='password']")
-    WebElement confirmPasswordAdd;
-    @FindBy(css = "button[type='submit']")
-    WebElement saveButtonAdd;
-    @FindBy (css = "header[class='oxd-topbar'] li:nth-child(2) span:nth-child(1)")
-    WebElement jobButton;
-    @FindBy(css = "li[class='--active oxd-topbar-body-nav-tab --parent'] li:nth-child(5) a:nth-child(1)")
-    WebElement workShiftButton;
+    private WebElement confirmPasswordEdit;
+    @FindBy(css = ".oxd-button:nth-child(2)")
+    private WebElement saveButtonEdit;
+    @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--ghost']")
+    private WebElement cancelButton;
 
 
+    //shared elements
+    @FindBy(css = "span[class='oxd-text oxd-text--span']")
+    private WebElement recordFound;
+    @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
+    private WebElement requiredMessage;
+    @FindBy(className = "oxd-select-option")
+    private List<WebElement> dropdown;
 
-//system users input methods
+
+    //shared methods
+    public void selectOption(@NotNull List<WebElement> dropdown, String select) {
+        Iterator<WebElement> it = dropdown.iterator();
+        while (it.hasNext()) {
+            WebElement wb = it.next();
+            if (wb.getText().equals(select)) {
+                wb.click();
+                break;
+            }
+        }
+    }
+
+    //system users input methods
     public void searchUsername(String input) {
         usernameSearch.sendKeys(input);
     }
+
     public void searchUserRole(String input) {
         userRoleSearch.click();
-        selectOption(dropdown,input);
+        selectOption(dropdown, input);
     }
-    public void searchEmployeeName(String  input) {
+
+    public void searchEmployeeName(String input) {
         employeeNameSearch.sendKeys(input);
     }
+
     public void searchStatus(String input) {
         statusSearch.click();
-        selectOption(dropdown,input);
+        selectOption(dropdown, input);
     }
     public void clickSearchButton() {
         searchButton.click();
     }
 
 
-//edit user input methods
+    //edit user input methods
     public void clickFirstEditButton() {
         firstEditButton.click();
     }
-    public void editUserRole (String input) {
+
+    public void editUserRole(String input) {
         userRoleEdit.click();
-        selectOption(dropdown,input);
+        selectOption(dropdown, input);
     }
-    public void editEmployeeName (String input) {
+
+    public void editEmployeeName(String input) throws InterruptedException {
         employeeNameEdit.sendKeys(input);
+        Thread.sleep(2000);
+        employeeNameDropdown.click();
+
     }
-    public void editStatus (String input) {
+
+    public void editStatus(String input) {
         statusEdit.click();
-        selectOption(dropdown,input);
+        selectOption(dropdown, input);
     }
-    public void editUsername (String input) {
+
+    public void editUsername(String input) {
         usernameEdit.sendKeys(input);
     }
-    public void clickChangePassword () {
+
+    public void clickChangePassword() {
         changePasswordCheckbox.click();
     }
-    public void editPassword (String input) {
+
+    public void editPassword(String input) {
         passwordEdit.sendKeys(input);
     }
-    public void editConfirmPassword (String input) {
+
+    public void editConfirmPassword(String input) {
         confirmPasswordEdit.sendKeys(input);
     }
+
     public void clickSaveButtonEdit() {
         saveButtonEdit.click();
     }
+
     public void clickCancelButton() {
         cancelButton.click();
     }
-    public void deleteEmployeeNameInput() {
-        employeeNameEdit.sendKeys(Keys.chord(Keys.CONTROL, "a"),(Keys.DELETE));
-    }
-    public void deleteUsernameInput() {
-        employeeNameEdit.sendKeys(Keys.chord(Keys.CONTROL, "a"),(Keys.DELETE));
-    }
 
 
-
-//add employee input methods
-    public void clickAddUser() {
-        addButton.click();
-    }
-    public void addUserRole(String input) {
-        userRoleAdd.click();
-        selectOption(dropdown, input);
-    }
-    public void addEmployeeName(String name) throws InterruptedException {
-        employeeNameAdd.sendKeys(name);
-        Thread.sleep(2000);
-        employeeNameDropdownAdd.click();
-    }
-    public void addStatus(String input) {
-        statusAdd.click();
-        selectOption(dropdown, input);
-    }
-    public void addUsername(String name) {
-        usernameAdd.sendKeys(name);
-    }
-    public void addPassword(String passwordAdd) {
-        this.passwordAdd.sendKeys(passwordAdd);
-    }
-    public void addConfirmPassword(String password) {
-        confirmPasswordAdd.sendKeys(password);
-    }
-    public void clickSaveButtonAdd() {
-        saveButtonAdd.click();
-    }
-
-
-
-//verification methods
+    //verification methods
     public boolean verifyUrl(String expectedUrl) {
         String actualUrl = driver.getCurrentUrl();
         return actualUrl.equals(expectedUrl);
     }
+
     public boolean verifySearchMessage() {
         String actualMessage = getRecordFoundMessage();
         Pattern pattern = Pattern.compile("[0-9]+");
         Matcher matcher = pattern.matcher(actualMessage);
-        boolean result = matcher.find();
-        return result;
+        return matcher.find();
     }
+
     public boolean verifyRequiredMessage(String expectedMessage) {
         String actualMessage = getRequiredMessage();
         return actualMessage.equals(expectedMessage);
     }
 
-//return messages
-    public void waitUntilElementAppears() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='oxd-toast oxd-toast--success oxd-toast-container--toast']")));
-    }
-    public String getSuccessfullySaved() {
-        return successfullySaved.getText();
-    }
+
+    //get message methods
     public String getRecordFoundMessage() {
         return recordFound.getText();
     }
-    public String getRequiredMessage() { return requiredMessage.getText(); }
 
-
-//go to methods
-    public JobPage goToWorkShiftList() {
-        jobButton.click();
-        workShiftButton.click();
-        return new JobPage(driver);
+    public String getRequiredMessage() {
+        return requiredMessage.getText();
     }
 }
 

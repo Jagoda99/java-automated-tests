@@ -14,10 +14,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class Initialization {
+public class BaseTest {
 
     protected LoginPage loginPage;
-    public static WebDriver driver;
+    public WebDriver driver;
     public WebDriver initializeDriver() throws IOException {
         Properties prop = new Properties();
         FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/" + "GlobalData.properties");
@@ -38,15 +38,14 @@ public class Initialization {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
         return driver;
     }
-    public static WebDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
     }
     @BeforeMethod
     public void launchApp() throws IOException {
         driver = initializeDriver();
         loginPage = new LoginPage(driver);
-        loginPage.goTo("https://opensource-demo.orangehrmlive.com/");
-
+        driver.get("https://opensource-demo.orangehrmlive.com/");
     }
     @AfterMethod
     public void closeDriver() {

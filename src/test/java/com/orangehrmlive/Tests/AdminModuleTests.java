@@ -1,18 +1,19 @@
 package com.orangehrmlive.Tests;
 
+import com.orangehrmlive.Listeners.Listener;
 import com.orangehrmlive.Pages.AdminModule.UserManagementPage;
 import com.orangehrmlive.Pages.DashboardModule.DashboardPage;
-import com.orangehrmlive.TestComponents.Initialization;
+import com.orangehrmlive.TestComponents.BaseTest;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({com.orangehrmlive.Listeners.Listeners.class})
+@Listeners({Listener.class})
 @Epic("Admin Module")
 @Feature("Admin Tests")
-public class AdminModuleTests extends Initialization {
+public class AdminModuleTests extends BaseTest {
     @Test
     public void adminPageTest() {
 
@@ -85,7 +86,7 @@ public class AdminModuleTests extends Initialization {
 
     }
     @Test
-    public void editEmployeeNameTest() {
+    public void editEmployeeNameTest() throws InterruptedException {
 
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
@@ -124,10 +125,6 @@ public class AdminModuleTests extends Initialization {
         userManagementPage.clickSaveButtonEdit();
 
         Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
-
-        /*userManagementPage.waitUntilElementAppears();
-        String actualMessage = userManagementPage.getSuccessfullySaved();
-        Assert.assertEquals(actualMessage,"SuccessSuccessfully Updated");*/
     }
     @Test
     public void changePasswordTest() {
@@ -146,18 +143,6 @@ public class AdminModuleTests extends Initialization {
 
     }
     @Test
-    public void cancelEditTest() {
-
-        loginPage.inputUsername("Admin");
-        loginPage.inputPassword("admin123");
-        DashboardPage dashboardPage = loginPage.goToDashboard();
-        UserManagementPage userManagementPage = dashboardPage.goToAdminModule();
-        userManagementPage.clickFirstEditButton();
-        userManagementPage.clickCancelButton();
-
-        Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
-    }
-    @Test
     public void userRoleBlankSpaceTest() {
 
         loginPage.inputUsername("Admin");
@@ -169,26 +154,18 @@ public class AdminModuleTests extends Initialization {
 
         Assert.assertTrue(userManagementPage.verifyRequiredMessage("Required"));
 
-
     }
     @Test
-    public void addUserTest() throws InterruptedException {
+    public void cancelEditTest() {
 
         loginPage.inputUsername("Admin");
         loginPage.inputPassword("admin123");
         DashboardPage dashboardPage = loginPage.goToDashboard();
         UserManagementPage userManagementPage = dashboardPage.goToAdminModule();
-        userManagementPage.clickAddUser();
-        userManagementPage.addUserRole("ESS");
-        userManagementPage.addEmployeeName("Jane Marie Doe");
-        userManagementPage.addStatus("Enabled");
-        userManagementPage.addUsername("janedoe");
-        userManagementPage.addPassword("User123!");
-        userManagementPage.addConfirmPassword("User123!");
-        Thread.sleep(2000);
-        userManagementPage.clickSaveButtonAdd();
+        userManagementPage.clickFirstEditButton();
+        userManagementPage.clickCancelButton();
 
         Assert.assertTrue(userManagementPage.verifyUrl( "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"));
-
     }
+
 }
